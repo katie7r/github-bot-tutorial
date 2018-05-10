@@ -9,10 +9,9 @@ async def main():
         gh = GitHubAPI(session, os.getenv('GH_ACCOUNT'), oauth_token=os.getenv('GH_AUTH'))
         user = 'mariatta'
         repo = 'strange-relationship'
-        await gh.patch(f'/repos/{user}/{repo}/issues',
+        await gh.patch(f'/repos/{user}/{repo}/issues/64',
               data={
-                  'title': 'Thank you!',
-                  'body': 'Thank you for the GitHub bot tutorial!'
+                  'state': 'closed'
               })
 
 
